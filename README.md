@@ -44,8 +44,8 @@ class User extends Model
 
 // Global
 Relation::morphMap([
-    'user' => App\Model\User::class,
-    'book' => App\Model\Book::class,
+    'user' => User::class,
+    'book' => Book::class,
 ]);
 ```
 
