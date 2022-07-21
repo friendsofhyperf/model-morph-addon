@@ -20,7 +20,7 @@ use Hyperf\Di\Aop\ProceedingJoinPoint;
 #[Aspect()]
 class QueriesRelationshipsAspect extends AbstractAspect
 {
-    public array $classes = [
+    public $classes = [
         QueriesRelationships::class . '::hasMorph',
     ];
 

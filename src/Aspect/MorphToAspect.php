@@ -22,7 +22,7 @@ use Hyperf\Di\Aop\ProceedingJoinPoint;
 #[Aspect()]
 class MorphToAspect extends AbstractAspect
 {
-    public array $classes = [
+    public $classes = [
         MorphTo::class . '::createModelByType',
     ];
 
