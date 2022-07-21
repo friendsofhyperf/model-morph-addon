@@ -66,8 +66,8 @@ class Image extends Model
     public static function getActualClassNameForMorph($class)
     {
         $morphMap = [
-            'user' => App\Model\User::class,
-            'book' => App\Model\Book::class,
+            'user' => User::class,
+            'book' => Book::class,
         ];
 
         return Arr::get($morphMap, $class, $class);
