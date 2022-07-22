@@ -32,9 +32,7 @@ class QueriesRelationshipsAspect extends AbstractAspect
             /** @var Model $model */
             $model = $proceedingJoinPoint->getInstance()->getModel();
 
-            $relation = Relation::noConstraints(function () use ($model, $arguments) {
-                return $model->{$arguments[0]}();
-            });
+            $relation = Relation::noConstraints(fn () => $model->{$arguments[0]}());
             $types = $model->newModelQuery()->distinct()->pluck($relation->getMorphType())->filter()->all();
 
             foreach ($types as &$type) {
