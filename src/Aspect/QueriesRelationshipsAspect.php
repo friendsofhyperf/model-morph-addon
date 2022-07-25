@@ -39,7 +39,7 @@ class QueriesRelationshipsAspect extends AbstractAspect
                 $type = $model::getActualClassNameForMorph($type) ?? $type;
             }
 
-            $proceedingJoinPoint->arguments[1] = $types;
+            $proceedingJoinPoint->arguments['keys']['types'] = $types;
         }
 
         return $proceedingJoinPoint->process();
