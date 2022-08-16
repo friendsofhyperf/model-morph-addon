@@ -10,25 +10,18 @@ declare(strict_types=1);
  */
 namespace FriendsOfHyperf\ModelMorphAddon;
 
+use FriendsOfHyperf\ModelMorphAddon\Aspect\MorphToAspect;
+use FriendsOfHyperf\ModelMorphAddon\Aspect\QueriesRelationshipsAspect;
+
 class ConfigProvider
 {
     public function __invoke(): array
     {
-        defined('BASE_PATH') or define('BASE_PATH', '');
-
         return [
-            'dependencies' => [],
-            'aspects' => [],
-            'annotations' => [
-                'scan' => [
-                    'paths' => [
-                        __DIR__,
-                    ],
-                ],
+            'aspects' => [
+                MorphToAspect::class,
+                QueriesRelationshipsAspect::class,
             ],
-            'commands' => [],
-            'listeners' => [],
-            'publish' => [],
         ];
     }
 }
